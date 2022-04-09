@@ -21,6 +21,16 @@ public class PitcheController {
 
 	@Autowired
 	private PitcheService pitcheService;
+	
+	@RequestMapping(method = RequestMethod.GET, value = "/")
+	public Map<String,String> norReply() {
+		return null;
+	}
+	
+	@RequestMapping(method = RequestMethod.GET, value = "/favicon.ico")
+	public Map<String,String> norReplyFavicon() {
+		return null;
+	}
 
 	@RequestMapping(method = RequestMethod.POST, value = "/pitches")
 	public Map<String, String> savePitche(@RequestBody Map<String, Object> pitche, HttpServletResponse response) {
