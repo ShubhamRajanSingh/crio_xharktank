@@ -20,12 +20,11 @@ dependencies {
 }
 
 jar {
-  manifest {
-    attributes(
-      'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
-      'Main-Class': 'com.xharktank.XharktankApplication'
-    )
-  }
+    manifest {
+        attributes (
+                'Main-Class': 'com.mypackage.MyClass'
+        )
+    }
 }
 
 tasks.named('test') {
