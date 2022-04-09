@@ -19,6 +19,15 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
+jar {
+  manifest {
+    attributes(
+      'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+      'Main-Class': 'com.xharktank.XharktankApplication'
+    )
+  }
+}
+
 tasks.named('test') {
 	useJUnitPlatform()
 }
